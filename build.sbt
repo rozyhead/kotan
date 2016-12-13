@@ -12,6 +12,9 @@ libraryDependencies ++= Seq(
 
 fork in run := true
 
+enablePlugins(JavaServerAppPackaging)
+
+mainClass in Compile := Some("com.example.ApplicationMain")
+
 lazy val akkaVersion = "2.4.14"
 lazy val scalatestVersion = "2.2.4"
-
