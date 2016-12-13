@@ -2,12 +2,16 @@ name := """kotan"""
 
 version := "1.0"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.8"
 
 libraryDependencies ++= Seq(
-  "com.typesafe.akka" %% "akka-actor" % "2.3.11",
-  "com.typesafe.akka" %% "akka-testkit" % "2.3.11" % "test",
-  "org.scalatest" %% "scalatest" % "2.2.4" % "test")
-
+  "com.typesafe.akka" %% "akka-actor" % akkaVersion,
+  "com.typesafe.akka" %% "akka-testkit" % akkaVersion % "test",
+  "org.scalatest" %% "scalatest" % scalatestVersion % "test"
+)
 
 fork in run := true
+
+lazy val akkaVersion = "2.4.14"
+lazy val scalatestVersion = "2.2.4"
+
