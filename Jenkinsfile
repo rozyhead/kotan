@@ -12,6 +12,11 @@ node('node') {
     junit 'target/test-reports/**/*.xml'
   }
 
+  stage('Multi JVM Test'){
+    sh 'bin/activator -no-colors multi-jvm:test'
+    junit 'target/test-reports/**/*.xml'
+  }
+
   stage('Packaging'){
     sh 'bin/activator -no-colors dist'
   }

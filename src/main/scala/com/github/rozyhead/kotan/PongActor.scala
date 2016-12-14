@@ -1,4 +1,4 @@
-package com.example
+package com.github.rozyhead.kotan
 
 import akka.actor.{Actor, ActorLogging, Props}
 

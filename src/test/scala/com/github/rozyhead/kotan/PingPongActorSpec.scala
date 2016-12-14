@@ -1,4 +1,4 @@
-package com.example
+package com.github.rozyhead.kotan
 
 import akka.actor.ActorSystem
 import akka.actor.Actor
