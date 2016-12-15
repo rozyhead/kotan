@@ -7,14 +7,26 @@ version := "1.0"
 
 scalaVersion := "2.11.8"
 
+scalacOptions ++= Seq(
+  "-deprecation",
+  "-feature",
+  "-unchecked",
+  "-Xlint",
+  "-Ywarn-dead-code",
+  "-Ywarn-numeric-widen",
+  "-Ywarn-unused",
+  "-Ywarn-unused-import"
+)
+
 val akkaVersion = "2.4.14"
-val scalatestVersion = "2.2.4"
+val scalatestVersion = "3.0.1"
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % akkaVersion,
   "com.typesafe.akka" %% "akka-testkit" % akkaVersion % "test",
   "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
-  "com.typesafe.akka" % "akka-cluster-metrics_2.11" % akkaVersion,
+  "com.typesafe.akka" %% "akka-cluster-metrics" % akkaVersion,
+  "com.typesafe.akka" %% "akka-cluster-tools" % akkaVersion,
   "com.typesafe.akka" %% "akka-multi-node-testkit" % akkaVersion % "test",
   "org.scalatest" %% "scalatest" % scalatestVersion % "test"
 )
