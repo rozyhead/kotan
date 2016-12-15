@@ -45,6 +45,8 @@ executeTests in Test <<= (executeTests in Test, executeTests in MultiJvm) map {
 
 configs(MultiJvm)
 
+jvmOptions in MultiJvm := Seq("-Xmx128M")
+
 /*
  * Native Packager
  */
