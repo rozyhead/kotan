@@ -17,6 +17,6 @@ node('node') {
   }
 
   stage('Archive'){
-    archiveArtifacts artifacts: 'target/universal/*.zip'
+    archiveArtifacts ['target/universal/*.zip', 'target/scala-*/*.jar', 'target/scala-*/*.pom']
   }
 }
