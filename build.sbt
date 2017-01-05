@@ -60,6 +60,8 @@ configs(MultiJvm)
 
 jvmOptions in MultiJvm := Seq("-Xmx128M")
 
+scalatestOptions in MultiJvm := Seq("-u", ((target in Compile).value / "test-reports").getAbsolutePath)
+
 /*
  * Native Packager
  */
