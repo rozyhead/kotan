@@ -3,20 +3,20 @@ node('node') {
     checkout scm
   }
 
-  stage('Compile'){
+  stage('Compile') {
     sh 'bin/activator -no-colors compile'
   }
 
-  stage('Test'){
+  stage('Test') {
     sh 'bin/activator -no-colors test'
     junit 'target/test-reports/**/*.xml'
   }
 
-  stage('Packaging'){
+  stage('Packaging') {
     sh 'bin/activator -no-colors dist'
   }
 
-  stage('Archive'){
-    archiveArtifacts artifacts: ['target/universal/*.zip', 'target/scala-*/*.jar', 'target/scala-*/*.pom']
+  stage('Archive') {
+    archiveArtifacts artifacts: 'target/universal/*.zip,target/scala-*/*.jar,target/scala-*/*.pom'
   }
 }
