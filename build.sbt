@@ -18,16 +18,20 @@ scalacOptions ++= Seq(
   "-Ywarn-unused-import"
 )
 
-val akkaVersion = "2.4.14"
+val akkaVersion = "2.4.16"
 val scalatestVersion = "3.0.1"
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % akkaVersion,
-  "com.typesafe.akka" %% "akka-testkit" % akkaVersion % "test",
   "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
   "com.typesafe.akka" %% "akka-cluster-metrics" % akkaVersion,
+  "com.typesafe.akka" %% "akka-cluster-sharding" % akkaVersion,
   "com.typesafe.akka" %% "akka-cluster-tools" % akkaVersion,
   "com.typesafe.akka" %% "akka-multi-node-testkit" % akkaVersion % "test",
+  "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
+  "com.typesafe.akka" %% "akka-testkit" % akkaVersion % "test",
+  "org.iq80.leveldb" % "leveldb" % "0.7",
+  "org.fusesource.leveldbjni" % "leveldbjni-all" % "1.8",
   "org.scalatest" %% "scalatest" % scalatestVersion % "test"
 )
 
